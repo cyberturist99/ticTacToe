@@ -1,0 +1,12 @@
+.field {
+	width: 80px;
+	height: 80px;
+	background-color: aliceblue;
+	border: 1px solid gainsboro;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+.field:hover {
+	opacity: 0.5;
+}

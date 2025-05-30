@@ -1,0 +1,14 @@
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+.header {
+	font-size: 48px;
+	font-weight: bold;
+	background-image: linear-gradient(to right, red, blue);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
