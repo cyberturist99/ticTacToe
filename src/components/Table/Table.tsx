@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import Field from '@/Field/Field'
 import GameResInfo from '@/GameResInfo/GameResInfo'
-import './Table.css'
+import '@/Table/Table.css'
 
 export default function Table() {
   const [board, setBoard] = useState<(string | null)[]>(Array(9).fill(null))

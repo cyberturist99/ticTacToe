@@ -1,5 +1,5 @@
 import Table from '@/Table/Table'
-import './App.css'
+import '@/App/App.css'
 
 function App() {
   return (
