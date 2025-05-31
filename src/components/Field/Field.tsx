@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import './field.css'
+import '@/Field/field.css'
 
 interface IFieldProps {
   board: (string | null)[]
