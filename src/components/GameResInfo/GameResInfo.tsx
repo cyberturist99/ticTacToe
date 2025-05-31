@@ -1,4 +1,4 @@
-import './gameResInfo.css'
+import './GameResInfo.css'
 
 interface IGameResInfo {
   gameEnd: boolean
