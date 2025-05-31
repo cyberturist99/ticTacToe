@@ -1,26 +1,38 @@
-import "./field.css";
+import React, { useMemo } from 'react'
+import './field.css'
 
-interface Props {
-	board: (string | null)[];
-	index: number;
-	handleClick: (index: number) => void;
+interface IFieldProps {
+  board: (string | null)[]
+  index: number
+  handleClick: (index: number) => void
+  winPattern: number[] | null
 }
 
-const Field: React.FC<Props> = ({ handleClick, index, board }) => {
-	const getTextColor = () => {
-		if (board[index] === "X") {
-			return { color: "blue" };
-		} else if (board[index] === "O") {
-			return { color: "green" };
-		} else {
-			return { color: "inherit" };
-		}
-	};
-	return (
-		<div className="field" onClick={() => handleClick(index)}>
-			<span style={getTextColor()}>{board[index]}</span>
-		</div>
-	);
-};
+const Field: React.FC<IFieldProps> = React.memo(
+  ({ handleClick, index, board, winPattern }) => {
+    const textColor = useMemo(() => {
+      if (board[index] === 'X') {
+        return { color: '#e74c3c' }
+      } else if (board[index] === 'O') {
+        return { color: '#3498db' }
+      }
+      return { color: 'inherit' }
+    }, [board, index])
 
-export default Field;
+    const isWinningField = useMemo(
+      () => winPattern?.includes(index),
+      [winPattern, index]
+    )
+
+    return (
+      <div
+        className={`field ${isWinningField ? 'winning' : ''}`}
+        onClick={() => handleClick(index)}
+      >
+        <span style={textColor}>{board[index]}</span>
+      </div>
+    )
+  }
+)
+
+export default Field
